@@ -1,0 +1,96 @@
+{{ attach_library("resume_creator/resume_creator-style") }}
+
+{% for data in test_var %}
+
+<div class="wrapper">
+  
+    <!-- left panel -->
+  <div class="left">
+    
+    <!-- photo -->
+    <div class="logo">
+      <i><img /></i>
+    </div>
+
+    <br />
+
+    <!-- contact info -->
+    <div class="contact">
+      <h3>Contact</h3>
+      <hr />
+      <h5>Phone</h5>
+      <p>{{ data.phone }}</p>
+      <h5>Email</h5>
+      <p>{{ data.email }}</p>
+      <h5>Address</h5>
+      <p>{{ data.address }}</p>
+    </div>
+
+    <!-- educational info -->
+    <div class="education">
+      <h3>Education</h3>
+      <hr />
+      <h5>Post Graduation</h5>
+      <p>{{ data.pg }}</p>
+      <h5>Under Graduation</h5>
+      <p>{{ data.ug }}</p>
+      <h5>Tenth</h5>
+      <p>{{ data.tenth }}</p>
+    </div>
+
+    <!-- skill set -->
+    <div class="skill">
+      <h3>Skills</h3>
+      <hr />
+      <p>{{ data.skill }}</p>
+    </div>
+
+    <!-- languages known -->
+    <div class="language">
+      <h3>Language</h3>
+      <hr />
+      <ul>
+        <li>English</li>
+        <li>Hindi</li>
+        <li>Tamil</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- right panel -->
+  <div class="right">
+    <!-- right top panel for name, desc, designation -->
+    <div class="top">
+      <h1 class="name">{{ data.name }}</h1>
+      <p class="desig"><i>'Designation'</i></p>
+      <p class="desc">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero expedita
+        molestias nostrum facere debitis. Aliquam a necessitatibus, perspiciatis
+        tenetur reiciendis illum accusamus cupiditate maxime vel praesentium
+        odio at nulla rem.
+      </p>
+    </div>
+
+    <!-- right middle panel for experience -->
+    <div class="middle">
+      <h3>Experience</h3>
+      <hr />
+      <p>
+        {{ data.intern }}
+      </p>
+    </div>
+
+    <!-- right bottom panel for references etc  -->
+    <div class="bottom">
+      <h3>Reference</h3>
+      <hr />
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta illo
+        debitis fuga, rem velit fugit quas minus non quo, dolorem, officiis
+        natus itaque ipsa accusamus sint unde similique voluptatem veritatis?
+      </p>
+    </div>
+  </div>
+</div>
+
+{% endfor %}

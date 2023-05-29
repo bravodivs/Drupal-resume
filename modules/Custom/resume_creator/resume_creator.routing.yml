@@ -1,0 +1,15 @@
+resume_creator.infos:
+  path: '/add'
+  defaults:
+    _controller: '\Drupal\resume_creator\Controller\ResumeController::showForm'
+    _title: 'Add user info'
+  requirements:
+    _permission: 'access content'
+
+resume_creator.display:
+  path: '/build_resume/{id}'
+  defaults:
+    _controller: '\Drupal\resume_creator\Controller\ResumeController::showResume'
+    _title: 'Resume'
+  requirements:
+    _permission: 'access_content'

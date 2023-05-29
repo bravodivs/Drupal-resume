@@ -1,0 +1,4 @@
+resume_creator-style:
+  css:
+    theme:
+      css/custom.css: {}

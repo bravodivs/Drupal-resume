@@ -1,0 +1,73 @@
+<?php
+
+function resume_creator_install()
+{
+    $connection = \Drupal::service('database');
+    $schema = $connection->schema();
+
+    // creting the table for storing info
+    $info_table = $connection->prefixTables('resume_info');
+    if (!$schema->tableExists($info_table)) {
+
+        $fields = [
+            'id' => [
+                'type' => 'serial',
+                'unsigned' => TRUE,
+                'not null' => TRUE,
+            ],
+            'name' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+            'email' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+            'phone' => [
+                'type' => 'varchar',
+                'length' => 20,
+                'not null' => TRUE,
+            ],
+            'address' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+            'pg' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+            'ug' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+            'tenth' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+            'intern' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+            'skill' => [
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+            ],
+        ];
+
+        $schema->createTable($info_table, $fields, ['primary key' => ['id']]);
+    }
+}
+
+function resume_creator_schema(){
+    $schema['resume_info'] = [
+        
+    ];
+}
